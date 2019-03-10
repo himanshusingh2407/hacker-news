@@ -19,7 +19,7 @@ class NewsItem extends Component {
           <h3>{this.state.title}</h3>
         </a>
         {this.state.by ? <div>By: <i>{this.state.by}</i></div> : null}
-        {this.state.time ? <div>Date: <i>{this.getDate(this.state.time)}</i></div> : null}
+        {this.state.time ? <div className="newsDate">Date: <i>{this.getDate(this.state.time)}</i></div> : null}
       </div>
     );
   }

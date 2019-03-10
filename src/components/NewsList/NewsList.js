@@ -9,7 +9,7 @@ class NewsList extends Component {
   }
   render() {
     return (
-      <div className="NewsList">
+      <div className="newsList">
         {this.generateNewsList(this.props.pageData)}
       </div>
     );
