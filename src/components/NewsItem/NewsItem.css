@@ -1,0 +1,12 @@
+.newsItem {
+  border-bottom: 1px solid grey;
+  height: 100px;
+  padding-bottom: 20px;
+}
+
+.title,
+.title:hover,
+.title:focus,
+.title:active {
+  color: #24292e;
+}

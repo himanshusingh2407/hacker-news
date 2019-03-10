@@ -46,6 +46,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="dashboard">
+        <h1 className="dashBoardTitle">News</h1>
         {this.state.paginatedData ?
           <div>
             <NewsList pageData={this.state.paginatedData[this.state.currentPageIndex]} />

@@ -14,8 +14,10 @@ class NewsItem extends Component {
 
   render() {
     return (
-      <div className="NewsItem">
-        <a href={this.state.url} target="_blank" rel="noopener noreferrer"><h3>{this.state.title}</h3></a>
+      <div className="newsItem">
+        <a href={this.state.url} target="_blank" rel="noopener noreferrer" className="title">
+          <h3>{this.state.title}</h3>
+        </a>
         {this.state.by ? <div>By: <i>{this.state.by}</i></div> : null}
         {this.state.time ? <div>Date: <i>{this.getDate(this.state.time)}</i></div> : null}
       </div>
@@ -24,9 +26,7 @@ class NewsItem extends Component {
 
   componentDidMount() {
     Axios.get(`https://hacker-news.firebaseio.com/v0/item/${this.props.newsId}.json`).then((response) => {
-      console.log(response.data);
       let news = response.data;
-
       this.setState({
         title: news.title,
         url: news.url,
