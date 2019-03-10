@@ -6,7 +6,7 @@ import './Dashboard.css';
 class Dashboard extends Component {
   render() {
     return (
-      <div className="Dashboard">
+      <div className="dashboard">
         Dashboard
         <NewsList />
         <Pagination />
