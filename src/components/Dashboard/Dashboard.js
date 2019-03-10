@@ -37,13 +37,19 @@ class Dashboard extends Component {
     return result;
   }
 
+  updateCurrentPage = (pageIndex) => {
+    this.setState({
+      currentPageIndex: pageIndex
+    })
+  }
+
   render() {
     return (
       <div className="dashboard">
         {this.state.paginatedData ?
           <div>
             <NewsList pageData={this.state.paginatedData[this.state.currentPageIndex]} />
-            <Pagination currentPageIndex={this.state.currentPageIndex} totalPages={this.state.paginatedData.length} />
+            <Pagination currentIndex={this.state.currentPageIndex} total={this.state.paginatedData.length} updateCurrentPage={this.updateCurrentPage}/>
           </div>
           : null}
       </div>
