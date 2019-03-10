@@ -2,6 +2,7 @@
   "name": "hacker-news",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://himanshusingh2407.github.io/hacker-news",
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.8.4",
