@@ -16,8 +16,8 @@ class NewsItem extends Component {
     return (
       <div className="NewsItem">
         <a href={this.state.url} target="_blank" rel="noopener noreferrer"><h3>{this.state.title}</h3></a>
-        {this.state.by ? <div>by <i>{this.state.by}</i></div> : null}
-        {this.state.time ? <div>Date <i>{this.getDate(this.state.time)}</i></div> : null}
+        {this.state.by ? <div>By: <i>{this.state.by}</i></div> : null}
+        {this.state.time ? <div>Date: <i>{this.getDate(this.state.time)}</i></div> : null}
       </div>
     );
   }

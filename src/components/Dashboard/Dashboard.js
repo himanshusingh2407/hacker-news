@@ -8,7 +8,7 @@ class Dashboard extends Component {
 
   state = {
     currentPageIndex: 0,
-    currentPageData: []
+    paginatedData: null
   }
 
   splitUp = (arr, n) => {
@@ -40,21 +40,22 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="dashboard">
-        Dashboard
-        <NewsList pageData={this.state.currentPageData} />
-        <Pagination currentPageIndex={this.state.currentPageIndex} />
+        {this.state.paginatedData ?
+          <div>
+            <NewsList pageData={this.state.paginatedData[this.state.currentPageIndex]} />
+            <Pagination currentPageIndex={this.state.currentPageIndex} totalPages={this.state.paginatedData.length} />
+          </div>
+          : null}
       </div>
     );
   }
 
   componentDidMount() {
     Axios.get('https://hacker-news.firebaseio.com/v0/topstories.json').then((response) => {
-      console.log(response.data);
-      const paginatedData = this.splitUp(response.data, 25);
-      console.log();
+      const paginatedData = this.splitUp(response.data, 50);
 
       this.setState({
-        currentPageData: paginatedData[this.state.currentPageIndex]
+        paginatedData
       });
     });
   }
